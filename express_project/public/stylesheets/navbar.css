@@ -1,0 +1,99 @@
+.navbar{
+	font-family: 'Raleway', sans-serif;
+}
+
+.navbar-default {
+	background: rgba(256, 256, 256, 0.97);
+	border: none;
+	box-shadow: 0 4px 3px rgba(0,0,0,0.05),0 8px 13px rgba(0,0,0,0.05),0 18px 23px rgba(0,0,0,0.05);
+}
+
+.navbar-text {
+	text-transform: uppercase;
+}
+
+.navbar-brand {
+	font-size: 1.5em;
+	letter-spacing: 2px;
+}
+
+#logo-1 {
+	color: #3d64af;
+}
+
+.navbar-default .navbar-nav>li>a {
+	padding-left: 4px;
+	padding-right: 9px;
+}
+
+#search-button {
+	margin-left: -4px;
+	border: none;
+	background: transparent;
+	padding-left: 0;
+	padding-right: 2px;
+	color: #3d64af;
+
+	border-radius: 0px; 
+	border-color: #3d64af;
+}
+
+#search-button:active {
+	border: none;
+	background: transparent;
+	padding-left: 0px;
+	padding-right: 2px;
+	color: #3d64af;
+	box-shadow: none;
+
+	border-radius: 0px; 
+	border-color: #3d64af;
+}
+
+#search-box {
+	margin-right: 0;
+	border: none;
+	background: transparent;
+	box-shadow: none;
+	border-bottom: 2px solid;
+	border-radius: 0px; 
+	border-color: #3d64af;
+}
+
+@media (max-width:768px){
+	.form-group {
+		overflow: hidden;
+	}
+    #search-box {
+    	width: calc(100% - 50px) !important;
+    	float: left;
+    	position: fixed;
+    	border: none;
+    }
+    #search-button  {
+    	float: right;
+    	display: inline-flex;
+    	padding-left: 25px;
+    	border: none;
+    	width: 40px;
+    	margin: 0 10px;
+    	z-index: -1;
+    }
+    #search-button:active  {
+    	float: right;
+    	display: inline-flex;
+    	padding-left: 25px;
+    	border: none;
+    	width: 40px;
+    	margin: 0 10px;
+    	z-index: -1;
+    }
+    .navbar-form {
+    	overflow: hidden;
+    }
+
+    .navbar-collapse {
+    	padding-left: 25px;
+    	padding-right: 25px;
+    }
+}

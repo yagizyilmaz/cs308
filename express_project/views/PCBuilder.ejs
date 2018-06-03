@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> <%=title%> </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/pcstyle.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,100" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/stylesheets/navbar.css">
+</head>
+<body>
+  <div id="navbarHere"><% include ../public/navbar/navbar %></div>
+
+  <div class="container-fluid" id="resim">
+    <div class="jumbotron" id="builderAd">
+      <h1 style="font-size: 100px; margin-top: 8%; ">PC Builder</h1>
+      <p style="font-size: 28px; margin-bottom: 6%;">A simple yet powerful pc building tool!</p>
+    </div>
+  </div>
+
+  <div class="container" id="mainCont">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-primary" id="shadowBox">
+          <div class="panel-heading text-center headers">What type of gamer are you? </div>
+          <div class="panel-body">
+            <div class="col-lg-3" align="center"><label class="radio-inline"><input type="radio" name="optradio">Not a Gamer</label></div>
+            <div class="col-lg-3" align="center"><label class="radio-inline"><input type="radio" name="optradio">Casual Gamer</label></div>
+            <div class="col-lg-3" align="center"><label class="radio-inline"><input type="radio" name="optradio">Serious Gamer</label></div>
+            <div class="col-lg-3" align="center"><label class="radio-inline"><input type="radio" name="optradio">Streamer</label></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="mainCont">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-primary" id="shadowBox">
+          <div class="panel-heading text-center headers">What is your budget?</div>
+          <div class="panel-body">
+            <div class="range">
+              <div class="slidecontainer">
+                <div class="col-lg-10"><input type="range" min="1000" max="10000" value="2000" class="slider" step="50" id="myRange"></div>
+                <div class="col-lg-2"><p>Budget: <span id="demo"></span></p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container" id="mainCont">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-primary" id="shadowBox">
+          <div class="panel-heading text-center headers">Are you willing to invest in future proofing?</div>
+          <div class="panel-body">
+            <div class="range">
+              <div class="slidecontainer">
+                <p class="text-center" style="font-size: 1.2em">Future proofing your PC means using parts that may be too powerful for you right now,
+                in order to ensure that your computer can keep up with future software needs without needing an upgrade.</p>
+                <div class="col-lg-6" align="center"><a class="btn btn-primary btn-sm notActive" data-title="true">I want to future proof</a></div>
+                <div class="col-lg-6" align="center"><a class="btn btn-primary btn-sm notActive" data-title="false">I'd rather not</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+
+    slider.oninput = function() {
+      output.innerHTML = this.value + " TL";
+    }
+  </script>
+  <script src="/javascripts/navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome to wonderPC Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+    <link rel="stylesheet" href="/stylesheets/hpstyle.css">
+
+    <script type="text/javascript" src="javascripts/user.js"></script>
+    <script type="text/javascript" src="javascripts/md5-min.js"></script>
+
+
+
+    <!--<script type="text/javascript" src="../routes/products.js"></script>-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="javascripts/ajaxpmp.js"></script>
+    <!--<script type="text/javascript" src="/javascripts/ordersTable.js"></script>-->
+
+
+</head>
+<style>
+#mailbtn{
+    margin-left: 5px;
+}
+#addressbtn{
+    margin-left: 5px;
+}
+#usercont{
+    margin-top: 30px;
+}
+#pass1{
+    margin-top: 5px;
+}
+body{
+    padding-top:30px;
+}
+
+.glyphicon {
+    margin-bottom: 10px;margin-right: 10px;
+}
+
+#conttable{
+    margin-top: 10px;
+}
+table {
+    width:90%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    table-layout: fixed;
+    word-wrap: break-word;
+    width:120px;
+    height:30px;
+    max-width:120px;
+    min-width:120px;
+    max-height:30px;
+    min-height:30px;
+}
+th, td {
+
+    padding: 10px;
+    text-align: center;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+    background-color: #fff;
+}
+table#t01 th {
+    background-color: #465ec4;
+    color: white;
+}
+
+</style>
+<body>
+
+
+   <div id="navbarHere"><% include ../public/navbar/navbar %></div>
+
+   <!--<h3> <%=user.first_name%> </h3>-->
+
+   <!--<h3> <%=user.first_name%> <%= user.last_name%></h3>-->
+   <!--<h3> <%=user.email%></h3>-->
+   <!--<h3> <%=user.home_address%></h3>-->
+
+   <div class="container" id="usercont">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="https://www.watsonmartin.com/wp-content/uploads/2016/03/default-profile-picture.jpg" style="max-width:75%" alt="" class="img-rounded img-responsive" />
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h2><i class="glyphicon glyphicon-user"></i><%=user.first_name%> <%= user.last_name%></h2>
+                        <br />
+                        <h4><i class="glyphicon glyphicon-envelope"></i><%=user.email%></h4>
+                        <br />
+                        <h4><i class="glyphicon glyphicon-home"></i><%=user.home_address%></h4>
+                        <br />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class ="row">
+        <div class="col-lg-6 text-center">
+            <button type="button" class="btn btn-primary" id ="ordersbtn" onclick="orderbtnClick()" >Show Orders</button>
+        </div>
+        <div class="col-lg-6 text-center">
+            <!--<a href="../user">-->
+                <button type="button" class="btn btn-primary" id ="updatebtn" onclick="updatebtnClick()">Update Info</button>
+                <!--</a>-->
+            </div>
+        </div>
+    </div>
+    <div class="container" id="conttable">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div id="table2here">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--<table>-->
+        <!--<th>NAME</th>-->
+        <!--<th>SURNAME</th>-->
+        <!--<th>EMAIL ADDRESS</th>-->
+        <!--<th>MODEL NUMBER</th>-->
+        <!--<th>AMOUNT</th>-->
+        <!--<th>TOTAL PRICE</th>-->
+        <!--<th>ADDRESS TO DELIVER</th>-->
+        <!--<th>STATUS</th>-->
+        <!--<th>ORDER CANCELLATION</th>-->
+
+        <!--</table>-->
+        <script src="/javascripts/navbar.js"></script>
+    </body>
+
+    <script>
+
+    //$('#mailbtn').click(function(event) {
+        function updateMail(){
+            function validateEmail(email) {
+                var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+            }
+            var arr={};
+            var mail = document.getElementById('mail').value;
+
+            if(validateEmail(mail)){
+                arr[0] = mail;
+                $.ajax({
+                    type: 'POST',
+                    url: '/userOrders/updateMail',
+                    data: JSON.stringify(arr),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json'
+                });
+            }
+            else if(!validateEmail(mail))
+                alert("E-mail is not valid.")
+        //location.reload();
+    }
+
+
+    //$('#addressbtn').click(function(event) {
+        function updateAddress(){
+            var arr={};
+            var address = document.getElementById('address').value;
+
+            arr[0] = address;
+            $.ajax({
+                type: 'POST',
+                url: '/userOrders/updateAddress',
+                data: JSON.stringify(arr),
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json'
+            });
+        //location.reload();
+    }
+
+    function updatebtnClick(){
+            if(document.getElementById('table2here').innerHTML != " ") {
+                $('#table2here').html(" ");
+                return false;
+            }
+        $('#table2here').html(" ");
+        $('#table2here').append(
+
+            '<h3>' + 'Update e-mail address:' + '</h3>' +
+            '<input type="text" name="mail" id="mail" placeholder="wonder@example.com"/>' +
+            '<button type="button" class="btn btn-primary" id ="mailbtn" onclick="updateMail()">Submit</button>' +
+
+            '<h3>' + 'Update home address:' + '</h3>' +
+            '<input type="text" name="address" id="address" placeholder="Sabanci Istanbul"/>' +
+            '<button type="button" class="btn btn-primary" id ="addressbtn" onclick="updateAddress()">Submit</button>' +
+
+            '<h3>' + 'Update password:' + '</h3>' +
+            '<input type="password" name="pass" id="pass" placeholder="New Password"/>' +
+            '<br />' +
+            '<input type="password" name="pass1" id="pass1" placeholder="Confirm Password"/>' +
+            '<br />' +
+            '<button type="button" class="btn btn-primary" id ="passbtn" onclick="passbtnOnClick()" >Submit</button>'
+            );
+    }
+    /*function deletbtnClick(iid, model_no){
+
+        console.log("welcome to delete button");
+        console.log(iid);
+        console.log(model_no);
+        var query = db.query('DELETE FROM invoices WHERE iid ="'+iid+'" AND model_no= "'+ model_no+'" ',function(err,result){
+            if (err){
+                console.error(err);
+                res.send('Cant delete from invoices');
+                return;
+            }
+            //req.flash('success','You are now registered and can log in');
+            console.error(result);
+            res.redirect('/userOrders');
+        });
+    }*/
+
+    function orderbtnClick(){
+        if(document.getElementById('table2here').innerHTML != " ") {
+            $('#table2here').html(" ");
+            return false;
+        }
+        $.getJSON('/userOrders/Orders', function(result) {
+            console.log(result);
+            $('#table2here').html(" ");
+
+            $("#table2here").append( "<div>" + '<table id="t01">' + '<tr>' +
+
+                // '<th>' + 'DELIVERY ID' + '</th>' +
+                '<th>' +'NAME'+ '</th>' +
+                '<th>'+'SURNAME' +'</th>' +
+                '<th>'+'EMAIL ADDRESS' +'</th>' +
+                '<th>'+'MODEL NUMBER' +'</th>' +
+                '<th>'+'AMOUNT' +'</th>' +
+                '<th>'+'TOTAL PRICE' +'</th>' +
+                '<th>'+'ADDRESS TO DELIVER' +'</th>' +
+                '<th>'+'STATUS' +'</th>' +
+                '<th>'+'Order Cancellation' +'</th>' + '<tr>'
+                );
+
+            $.each(result, function(){
+                //console.log(this.is_delivered);
+                if(this.is_delivered === 1){
+                    delivered = 'DELIVERED';
+
+                    $("#table2here").append( '<tr>' +
+
+                        // '<td>' +  this.did  + '</td>' +
+                        '<td>' +  this.first_name  + '</td>' +
+                        '<td>' +  this.last_name  + '</td>' +
+                        '<td>' +  this.email + '</td>' +
+                        '<td>' +  this.model_no  + '</td>' +
+                        '<td>' +  this.amount  + '</td>' +
+                        '<td>' +  this.totalPrice + ',00 $' + '</td>' +
+                        '<td>' +  this.home_address  + '</td>' +
+                        '<td>' +  delivered  + '</td>' +
+                        //if(delivered == )
+                        '<td><button type="button" class="btn btn-primary" id ="deletebtn" disabled>Delete Order</button></td>' +
+                        '<tr>' + '</table>' + "</div>" );
+                }
+                else{
+                    delivered = 'PREPARING';
+                    /*var iid = this.iid;
+                    var model_no = this.model_no;*/
+                    var identifier = this.iid + "_" + this.model_no;
+                    console.log(identifier);
+                    //console.log('iid here:');
+                    //console.log(iid);
+                    //iidArray.push(this.iid);
+                    //modelNoArray.push(this.model_no);
+                    //var model_no = this.model_no;
+                    $("#table2here").append( '<tr>' +
+
+                        // '<td>' +  this.did  + '</td>' +
+                        '<td>' +  this.first_name  + '</td>' +
+                        '<td>' +  this.last_name  + '</td>' +
+                        '<td>' +  this.email + '</td>' +
+                        '<td>' +  this.model_no  + '</td>' +
+                        '<td>' +  this.amount  + '</td>' +
+                        '<td>' +  this.totalPrice + ',00 $' + '</td>' +
+                        '<td>' +  this.home_address  + '</td>' +
+                        '<td>' +  delivered  + '</td>' +
+                        '<td><a href= "../userOrders/cancelOrder/'+identifier+'"><button type="button" class="btn btn-primary" id ="deletebtn" >Delete Order</button></a></td>' +
+                        '<tr>' + '</table>' + "</div>" );
+                }
+
+            });
+        });
+    }
+</script>

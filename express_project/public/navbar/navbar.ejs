@@ -1,0 +1,41 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid col-lg-offset-1 col-lg-10">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../"><span id="logo-1">wonder<i class="fas fa-laptop"></i></i></span>PC</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">CATEGORIES<b class="caret"></b></a>
+            <ul class="dropdown-menu" id="cats">
+              <li><a href="../category/onsale">ON SALE</a></li>
+            </ul>
+          </li>
+          <li><a data-toggle="modal" href="../pcBuilder"><i class="fas fa-wrench"></i> PC BUILDER</a></li>
+          <li>
+            <div class="navbar-form navbar-left">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" id="search-box">
+              </div>
+              <button class="btn btn-default" id="search-button"><i class="fas fa-search"></i></button>
+            </div>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right"> 
+          <li><a data-toggle="modal" href="../shopCart"><i class="fas fa-shopping-cart"></i> CART</a></li>
+          <%if (!user){%>
+          <li><a data-toggle="modal" href="../signup"><i class="fas fa-user"></i> USER</a></li>
+          <%}else{%>
+          <li><a data-toggle="modal" href="../userOrders" ><i class="fas fa-user"></i> <%=user.first_name%></a></li>
+          <li><a data-toggle="modal" href="../logout" ><i ></i> LOGOUT</a></li>
+          <%}%>
+        </ul>
+      </div>
+    </div>
+  </nav>

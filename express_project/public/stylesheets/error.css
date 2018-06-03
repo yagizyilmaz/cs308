@@ -1,0 +1,36 @@
+body {
+    font-family: Raleway, sans-serif;
+    background: #FFFFFF;
+}
+
+.container {
+    margin: auto
+}
+
+#content {
+    padding-top: 250px
+}
+
+h4 {
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+.btn-success {
+    background-color: #3264b5  !important;
+    border-color: rgba(5, 137, 80, .3)
+}
+
+.btn-success:hover {
+    background-color: #5b93ef !important
+}
+
+.btn-success.active {
+    background-color: #5b93ef !important
+}
+
+.btn-success.active:hover {
+    background-color: #5b93ef !important
+}
+
+

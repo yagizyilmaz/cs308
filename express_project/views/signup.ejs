@@ -1,0 +1,88 @@
+<html>
+<head>
+	<title>
+		Login and Register
+	</title>
+	<link rel = "stylesheet" href = "stylesheets/signupstyle.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:200,100" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="/stylesheets/signup.css">
+	<link rel="stylesheet" href="/stylesheets/navbar.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+	.masked {
+		text-security: disc;
+		-webkit-text-security: disc;
+		-moz-text-security: disc;
+		-mox-text-security: disc;
+	}
+</style>
+</head>
+
+<body>
+	<div id="navbarHere"><% include ../public/navbar/navbar %></div>
+
+	<div class = "login-page">
+		<div class = "form">
+
+			<form  method = "post" name = "registrationForm"  class = "register-form" id="toFill">
+				<input type = "text" name = "name" placeholder = "NAME"/>
+				<input type = "text" name = "surname" placeholder = "SURNAME"/>
+				<input type = "text" name = "taxid" placeholder = "TAX ID"/>
+				<input class="masked" type = "text" name = "password" placeholder = "PASSWORD"/>
+				<input class="masked" type = "text" name = "passwordConfirm" placeholder = "CONFIRM PASSWORD"/>
+				<input type = "text" name = "email" placeholder = "EMAIL ADRESS"/>
+				<input type = "text" name = "adress" placeholder = "HOME ADRESS"/>
+
+				<button id="myAnchor"> CREATE </button>
+				<p class = "message"> Have an account already? <a href="#" style="color: black"> Login </a> </p>
+			</form>
+
+			<video autoplay muted loop id="myVideo">
+				<source src="videos/signupvid.mp4" type="video/mp4">
+				</video>
+
+				<form  method = "post" name = "loginForm" class = "login-form" id = "loginToFill">
+					<input type = "text" name = "username" placeholder = "USERNAME"/>
+					<input type = "password" name = "password" placeholder = "PASSWORD"/>
+					<button id = "loginButton" > LOGIN </button> 
+					<p class = "message"> Don't have an account? <span style="color: black"> Register </span></p>
+					<p class = "renewMessage"> Forgot password? <a href = "passwordRenew" style="color: black"> Renew </a></p>
+				</form>
+
+			</div>
+
+
+
+			<script src = 'https://code.jquery.com/jquery-3.3.1.min.js'> </script>
+			<script type="text/javascript" src="javascripts/md5-min.js"></script>
+			<script type="text/javascript" src="javascripts/signup.js"></script>
+
+			<script>
+
+				$('#loginButton').click(function(event) {					
+
+
+					var username = document.forms["loginForm"]["username"].value;
+					var passwordLogin = document.forms["loginForm"]["password"].value;
+
+					if (username == "") {
+						alert("USERNAME must be filled out");
+						return false;
+					}
+					else if (passwordLogin == ""){
+						alert("PASSWORD must be filled out");
+						return false;
+					}
+				}); 
+			</script>
+
+			<script src="/javascripts/navbar.js"></script>
+		</body>
+
+		</html>

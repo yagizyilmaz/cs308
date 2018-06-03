@@ -1,0 +1,105 @@
+.mbr-slider .carousel-inner > .active {
+    display: table;
+}
+.mbr-slider .carousel-control {
+    background-image: none;
+    width: 54px;
+    height: 54px;
+    top: 50%;
+    margin-top: -27px;
+    line-height: 54px;
+    opacity: 1;
+    text-shadow: none;
+    z-index: 5;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    -o-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
+.mbr-slider .carousel-control.left {
+    margin-left: 20px;
+    border-radius: 50px;
+}
+.mbr-slider .carousel-control.right {
+    margin-right: 20px;
+    border-radius: 50px;
+}
+.mbr-slider .carousel-control:hover {
+    background: #fff;
+    color: #000;
+}
+.mbr-slider .carousel-indicators {
+    bottom: 20px;
+}
+.mbr-slider .carousel-indicators li,
+.mbr-slider .carousel-indicators .active {
+    width: 15px;
+    height: 15px;
+    margin: 3px;
+    border: 2px solid #ffffff;
+}
+
+@media (max-width: 767px) {
+    .mbr-slider .carousel-control {
+        top: auto;
+        bottom: 20px;
+    }
+}
+/* boxed model */
+.mbr-slider .mbr-section {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* article layout */
+html {
+  position: relative;
+  min-height: 100%;
+}
+.mbr-section {
+  padding: 0 20px;
+}
+.mbr-section--no-padding {
+  padding: 0;
+}
+.mbr-section--relative {
+  position: relative;
+}
+.mbr-section--fixed-size {
+  overflow: hidden;
+}
+.mbr-section--full-height {
+  height: 60vh;
+}
+.mbr-section--bg-adapted {
+  background-attachment: scroll;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mbr-section__container {
+  padding: 0;
+  position: relative;
+  z-index: 3;
+}
+.mbr-box {
+  display: table;
+  width: 100%;
+}
+.mbr-box__magnet {
+  display: table-cell;
+  float: none;
+  height: 100%;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+.mbr-box__magnet--sm-padding {
+  padding: 41px 0;
+}
+.mbr-box__magnet--center-left {
+  text-align: left;
+}
+.mbr-box__magnet--center-right {
+  text-align: right;
+}

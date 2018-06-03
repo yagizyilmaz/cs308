@@ -1,0 +1,22 @@
+body {
+	font-family: 'Arimo', sans-serif;
+}
+
+.message {
+	margin-top: 20px;
+}
+
+#loginButton {
+	border-radius: 3px;
+	box-shadow: 0 4px 3px rgba(0,0,0,0.15),0 8px 13px rgba(0,0,0,0.15),0 18px 23px rgba(0,0,0,0.15);
+}
+
+input {
+	border-radius: 3px;
+	box-shadow: 0 4px 3px rgba(0,0,0,0.15),0 8px 13px rgba(0,0,0,0.15),0 18px 23px rgba(0,0,0,0.15);
+	color: #cecaca;
+}
+
+a:hover {
+	text-decoration: none;
+}

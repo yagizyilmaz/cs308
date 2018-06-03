@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Sales Manager</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,100" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/stylesheets/navbar.css">
+
+
+
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+  
+
+</head>
+<style>
+    table {
+        width:90%;
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        table-layout: fixed;
+        word-wrap: break-word;
+        width:120px;
+        height:30px;
+        max-width:120px;
+        min-width:120px;
+        max-height:30px;
+        min-height:30px;
+    }
+    th, td {
+
+        padding: 10px;
+        text-align: center;
+    }
+    table#t01 tr:nth-child(even) {
+        background-color: #eee;
+    }
+    table#t01 tr:nth-child(odd) {
+        background-color: #fff;
+    }
+    table#t01 th {
+        background-color: #465ec4;
+        color: white;
+    }
+    table#t02 tr:nth-child(even) {
+        background-color: #eee;
+    }
+    table#t02 tr:nth-child(odd) {
+        background-color: #fff;
+    }
+    table#t02 th {
+        background-color: #465ec4;
+        color: white;
+    }
+
+</style>
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid col-lg-offset-1 col-lg-10">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../indexproduct"><span id="logo-1">wonder<i class="fas fa-laptop"></i></i></span>PC</a>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+     
+          <li><a data-toggle="modal" ><i class="fas fa-unlock-alt"></i> Sales Manager</a></li>
+          <li><a data-toggle="modal" href="../logout" ><i ></i> LOGOUT</a></li>
+  </ul>
+</div>
+</div>
+</nav>
+
+<div id="mainContainer" style="margin-top: 60px;">
+
+    <div class="container-fluid" >
+          
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="add" aria-selected="true">Change Product Price</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="remove" aria-selected="false">Show Invoices</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="stock" aria-selected="false">Make Discount</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#what" role="tab" aria-controls="delivery" aria-selected="false">Revenues and Profit Charts</a>
+                </li>
+            </ul>
+
+      <div class="tab-content" id="myTabContent">
+        
+
+              <div class="tab-pane fade" name="home" id="home" role="tabpanel" aria-labelledby="add-tab">
+                <br>
+                <form  method = "post" name = "registrationForm"  id="changeprice" class = "register-form" >   
+                 <p id="title">Change by Model Number:</p>                
+                 <input type = "text" name = "price" id="price" placeholder = "ENTER NEW PRICE"/><br><br>
+                 <input type = "text" name = "product" id="product"  placeholder = "ENTER MODEL NUMBER"/><br><br>
+                 <button type="button" id = "myAnchor" class="btn btn-primary">UPDATE</button>
+                 <br>
+                 <br>
+                 <p id="title">Search for a product:</p>
+                 <input type = "text" name = "searchproduct" id="searchproduct" />
+                 <button type="button" id = "productsSearch" class="btn btn-primary">Search</button>
+                 <button type="button" id = "listproducts" class="btn btn-primary">LIST ALL PRODUCTS</button>
+                </form>
+                <div id="changepricetable">
+                </div>
+              </div>
+
+
+            <div class="tab-pane fade" data-provide="datepicker"  id="profile" role="tabpanel" aria-labelledby="remove-tab">
+              <br>
+              <form  method = "post" name = "registrationForm"  class = "register-form" id="toFill2">
+                <input type = "date" id="test" name = "firstdate2"  placeholder = "INITIAL DATE"/><br><br>
+                <input type = "date" id="test" name = "seconddate2" placeholder = "END DATE"/><br><br>
+                <button type="button" class="btn btn-primary" id ="ordersbtn" onclick="orderbtnClick()"> Show Invoices in Range </button>
+                <button type="button" class="btn btn-primary" id ="ordersbtn" onclick="orderallbtnClick()"> Show All Invoices </button>
+              </form>
+              <div id="invoicetable"> 
+              </div>             
+            </div>
+
+
+           <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="stock-tab">
+            <br>
+            <form  method = "post" name = "registrationForm"  class = "register-form" id="toFill3">
+              <input type = "text" name = "discount" id="discount" placeholder = "ENTER DISCOUNT RATE"/><br><br>
+              <input type = "text" name = "product2" id="product2" placeholder = "ENTER PRODUCT MODEL NUMBER"/><br><br>
+              <button type="button" id = "myAnchor2" class="btn btn-primary">DISCOUNT</button>  
+              <br>
+              <p id="title">Search for a product:</p>
+              <input type = "text" name = "discountproduct" id="discountproduct" />
+              <button type="button" id = "discountSearch" class="btn btn-primary">Search</button>
+              <button type="button" id = "myAnchor5" class="btn btn-primary">LIST ALL PRODUCTS</button>         
+            </form>
+            <div id="discounttable"> 
+            </div>      
+          </div>
+
+
+          <div class="tab-pane fade" data-provide="datepicker" id="what" role="tabpanel" aria-labelledby="delivery-tab">
+            <br>
+            <p id="title">Revenues:</p>
+            <input type = "date" id="test" name = "firstdate" placeholder = "INITIAL DATE"/><br><br>
+            <input type = "date" id="test" name = "seconddate"  placeholder = "END DATE"/><br><br>
+            <button type="button" id="myAnchor3" class="btn btn-primary" onclick="orderbtnClick2()"> SHOW REVENUE </button><br><br> 
+            <div id="revenue2here"></div>
+            <br>
+            <p id="title">Profit Chart:</p>
+            <input type = "text" name = "year" id="year" placeholder = "SELECT YEAR"/><br><br>
+            <button type="button" id="myAnchor4" class="btn btn-primary" onclick="orderbtnClick3()"> CREATE PROFIT CHART </button><br><br>
+             <div id="chartContainer" style="height: 300px; width: 100%;">
+            </div>       
+          </div>
+      </div>
+    
+  </div>
+  </div>
+<script type="text/javascript" src="/javascripts/salesManagerscript.js"></script>  
+</body>
+</html>
+
+
+

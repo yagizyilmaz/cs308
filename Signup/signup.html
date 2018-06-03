@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>
+Login and Register
+</title>
+<link rel = "stylesheet" href = "style.css">
+</head>
+
+<body> 
+
+
+
+
+
+
+
+
+<div class = "login-page">
+<div class = "form">
+ 
+	<form action = "#" method = "post" name = "registrationForm"  class = "register-form">
+	<input type = "text" name = "name" placeholder = "NAME"/>
+	<input type = "text" name = "surname" placeholder = "SURNAME"/>
+	<input type = "text" name = "taxid" placeholder = "TAX ID"/>
+	<input type = "email" name = "email" placeholder = "EMAIL ADRESS"/>
+	<input type = "text" name = "adress" placeholder = "HOME ADRESS"/>
+	
+	<button  onclick = "createButtonFunction()"> CREATE </button>
+	<p class = "message"> Have an account already? <a href="#" style="color: black"> Login </a> </p>
+	</form>
+
+	<video autoplay muted loop id="myVideo">
+	<source src="Youtube Update- Download your Own .mp4 Videos - YouTube.mp4" type="video/mp4">
+	</video>
+	
+	<form action = "#" method = "post" name = "loginForm" class = "login-form"> 
+	<input type = "text" name = "username" placeholder = "USERNAME"/>
+	<input type = "password" name = "password" placeholder = "PASSWORD"/>
+	<button onclick = "LoginButtonFunction()"> LOGIN </button>
+	<p class = "message"> Don't have an account? <a href = "#" style="color: black"> Register </a></p>
+	<p class = "renewMessage"> Forgot password? <a href = "passwordRenew.html" style="color: black"> Renew </a></p>
+	</form>
+
+ </div>
+ 
+ 
+ <script src = 'https://code.jquery.com/jquery-3.3.1.min.js'> </script>
+ 
+ <script>
+ $('.message a').click(function() {
+ $('form').animate({height: "toggle", opacity: "toggle"},"slow");
+ });
+ </script>
+ 
+ <script> 
+ 
+ function createButtonFunction() {
+   var surname = document.forms["registrationForm"]["surname"].value;
+   var name = document.forms["registrationForm"]["name"].value;
+   var taxid = document.forms["registrationForm"]["taxid"].value;
+   var email = document.forms["registrationForm"]["email"].value;
+   var adress = document.forms["registrationForm"]["adress"].value;
+   
+   
+	
+   
+	if (name == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+	else if ( !email.includes("@") && email != ""){
+		return false;
+	}
+	else if (surname == "") {
+        alert("ID must be filled out");
+        return false;
+    }
+	else if (taxid == "") {
+        alert("TaxID must be filled out");
+        return false;
+    }
+	else if (email == "" ) {
+        alert("Email Adress must be filled out");
+        return false;
+    }
+	
+	else if (adress == "") {
+        alert("Home Adress must be filled out");
+        return false;
+    }
+	
+	else  {
+		alert("dsfdsfdsfdsfdsfdsfds");
+		
+		
+		window.open("confirmPassword.html")
+		
+		//$.post('createAccountForm', {name:name},function(data);
+	}
+	
+ }
+ </script>
+ 
+ <script>
+ function LoginButtonFunction(){
+ var username = document.forms["loginForm"]["username"].value;
+ var passwordLogin = document.forms["loginForm"]["password"].value;
+ 
+  if (username == "") {
+        alert("USERNAME must be filled out");
+        return false;
+    }
+	else if (passwordLogin == ""){
+		alert("PASSWORD must be filled out");
+        return false;
+	}
+ 
+ 
+ 
+ }
+ 
+	
+	
+ </script>
+ 
+ 
+ 
+</body>
+
+</html>

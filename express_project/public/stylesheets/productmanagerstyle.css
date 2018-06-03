@@ -1,0 +1,27 @@
+.radioSelector {
+	margin-right: 15px;
+}
+
+#wrapEM div {
+	display: inline;
+}
+
+#form{
+    width: 250px;
+}
+
+#myTabContent{
+    padding-left: 25px;
+}
+
+#title{
+    padding-top: 15px;
+}
+
+body {
+	margin: auto;
+	margin-top: 60px;
+	width: 80%;
+	font-family: 'Arimo', sans-serif;
+}
+

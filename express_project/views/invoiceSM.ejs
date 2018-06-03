@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Online Store</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,100" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/stylesheets/navbar.css">
+  <link rel="stylesheet" href="/stylesheets/invoice.css">
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<style type="text/css">
+body {
+  margin-top: 25px;
+}
+</style>
+
+
+<body>
+  <div id="navbarHere"><% include ../public/navbar/navbar %></div>
+
+  <% var name = "";%>
+  <% var lastname = "";%>
+  <% var address = "";%>
+  <% var forname = 0;%>
+  <% var forproduct = 0;%>
+  <% var prLength = 0;%>
+  <% var i = 0;%>
+
+  <% print.forEach(function (pr) { %>
+  <% if(forname==0) {%>
+  <%= name = pr.first_name + ' ' + pr.last_name%>
+  <%= lastname = pr.last_name%>
+  <%= address = pr.home_address%>
+  <% }%>
+  <% forname++; %>
+  <% })%> 
+
+
+
+  <div class="container-fluid" id="main">
+    <h1>Thank you for shopping at WonderPC</h1>
+    <h2>Your products are being shipped to:</h2>
+    <h2><%=name%></h2>
+    <h2><%=address%></h2>
+    <h2>Products:             Quantity:               Price:</h2><% var total = 0; %>
+
+    <% print.forEach(function (pr) { %>
+    <% if(i>0) { %>
+    <h3><%=pr.model_no%>             <%=pr.amount%>               <%=pr.price_usd%></h3>
+    <% total += pr.amount * parseFloat(pr.price_usd); %>
+    <% } %>
+    <% i++; %>
+    <% }) %>
+    <h2>Your total is : <%=total%>,00 $ + Tax</h2>
+    <div>
+    <form>
+      <button type="button" id = "save" onclick="savebutton();"" class="btn btn-primary">SAVE</button> 
+    </form>
+  </div>
+   
+   
+  </div>
+  <script src="/javascripts/navbar.js"></script>
+  <script type="text/javascript" src="/javascripts/salesManagerscript.js"></script>  
+</body>

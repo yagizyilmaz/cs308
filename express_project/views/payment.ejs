@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <title>Welcome to wonderPC Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
+    <link rel="stylesheet" href="/stylesheets/paymentStyle.css">
+
+    <script type="text/javascript" src="../routes/products.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div id="navbarHere"><% include ../public/navbar/navbar %></div>
+
+<div class="container">
+    <div class="row">
+        <!-- You can make it whatever width you want. I'm making it full width
+        on <= small devices and 4/12 page width on >= medium devices -->
+        <div class="col-xs-12 col-md-4">
+
+
+            <!-- CREDIT CARD FORM STARTS HERE -->
+            <div class="panel panel-default credit-card-box">
+                <div class="panel-heading display-table" >
+                    <div class="row display-tr" >
+                        <h3 class="panel-title display-td" >Payment Details</h3>
+                        <div class="display-td" >
+                            <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <!--<form role="form" id="payment-form">-->
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <div class="input-group">
+                                        <input
+                                                type="text"
+                                                class="form-control"
+                                                name="name"
+                                                id = "name"
+                                                placeholder="Name"
+                                                required autofocus
+                                        />
+                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="lastname">Lastname</label>
+                                    <div class="input-group">
+                                        <input
+                                                type="tel"
+                                                class="form-control"
+                                                name="lastname"
+                                                id = "lastname"
+                                                placeholder="Lastname"
+                                                required autofocus
+                                        />
+                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="cardNumber">CARD NUMBER</label>
+                                    <div class="input-group">
+                                        <input
+                                                type="tel"
+                                                class="form-control"
+                                                name="cardNumber"
+                                                id ="cardNumber"
+                                                placeholder="Valid Card Number"
+                                                autocomplete="cc-number"
+                                                required autofocus
+                                        />
+                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-7 col-md-7">
+                                <div class="form-group">
+                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                    <input
+                                            type="tel"
+                                            class="form-control"
+                                            name="cardExpiry"
+                                            id = "cardExpiry"
+                                            placeholder="MM / YY"
+                                            autocomplete="cc-exp"
+                                            required
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-md-5 pull-right">
+                                <div class="form-group">
+                                    <label for="cardCVC">CV CODE</label>
+                                    <input
+                                            type="tel"
+                                            class="form-control"
+                                            name="cardCVC"
+                                            id = "cardCVC"
+                                            placeholder="CVC"
+                                            autocomplete="cc-csc"
+                                            required
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <button class="btn btn-success btn-lg btn-block" id="paybtn">Pay</button>
+                            </div>
+                        </div>
+                        <div class="row" style="display:none;">
+                            <div class="col-xs-12">
+                                <p class="payment-errors"></p>
+                            </div>
+                        </div>
+                    <!--</form>-->
+                </div>
+            </div>
+            <!-- CREDIT CARD FORM ENDS HERE -->
+
+
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+<script>
+    //var arr = {};
+    $('#paybtn').click(function(event) {
+        var name = document.getElementById("name").value;
+        var lastname = document.getElementById("lastname").value;
+        var cardNumber = document.getElementById("cardNumber").value;
+        var cardExpiry = document.getElementById("cardExpiry").value;
+        var cvc = document.getElementById("cardCVC").value
+
+        if(name === "" || lastname === "" || cardNumber === "" || cardExpiry === "" || cvc === ""){
+            alert("Please fill all fields!")
+            return false;
+        }
+
+        window.location.href = "../invoice";
+        //arr[0] = 0;
+
+       /* $.ajax({
+            type: 'POST',
+            url: '/payment/invoice',
+            //data: JSON.stringify(arr),
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json'
+        });*/
+
+    });
+
+
+</script>
+<script src="/javascripts/navbar.js"></script>
+</html>

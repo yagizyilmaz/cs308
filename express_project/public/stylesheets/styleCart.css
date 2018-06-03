@@ -1,0 +1,196 @@
+@import "compass/css3";
+
+
+
+
+.columns {
+	
+	float:left;
+	
+	
+}
+
+.price{
+		
+		margin-left: 200px;
+	}
+
+.Pay {
+	font-family: "Verdana", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: springgreen	;
+	padding: 20px 40px;
+	width: auto;
+	border: 0;
+	/*margin-top: 10px;*/
+	/*padding: 15px;*/
+	color: #FFFFF;
+	float:right;
+	font-size: 21px;
+	cursor: pointer;
+	
+	border-radius: 3px;
+}
+
+.Pay:hover, .Pay:active {
+	
+	background: red;
+}
+.Pay:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+ .shopping-cart {
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid $color-border;
+  }
+  
+  .remove-product {
+    border: 0;
+	text-transform: uppercase;
+	width: auto;
+    padding: 5px 10px;
+    background-color: tomato;
+    color: black;
+    font-family: $font-bold;
+    font-size: 16;
+    border-radius: 5px;
+	cursor:pointer;
+  }
+  
+ .remove-product span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.remove-product span:after {
+  content: 'X';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.remove-product:hover span {
+  padding-right: 25px;
+}
+
+.remove-product:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+ 
+.image {
+	margin-top: 10px;
+	float: left; 
+	width: 40%;
+	padding:1px;
+	/*border:1px solid #021a40;*/
+
+}
+
+.product-details {float:left;width: 16%;}
+.product-price { float: left; width: 12%; margin-bottom: 11px; }
+.product-quantity { text-align:left;
+	 }
+.product-line-price { float: left; width: 12%; text-align: right; }
+
+
+.totals {
+  
+  .totals-item {
+    float: right;
+    clear: both;
+    width: 100%;
+    margin-bottom: 10px;
+  
+    label{
+      float: right;
+      clear: both;
+      width: 79%;
+      text-align: right;
+    }
+  }
+    
+    .totals-value {
+      float: right;
+      width: 21%;
+      text-align: right;
+    }
+  
+  
+  .totals-item-total {
+    font-family: $font-bold;
+  }
+}
+
+
+
+.product .product-price:before, .product .product-line-price:before, .totals-value:before, .total-price:before {
+  content: '$';
+  font-size: 20px;
+}
+
+.panel-body{
+	background:#DCDCDC;
+}
+
+.product-price{
+	
+	text-align:left;
+	font-size: 20px;
+
+}
+
+.total-price {
+	text-align:left;
+	font-size: 20px;
+	
+}
+
+.title {
+	
+	font-family: "Times New Roman", Times, serif;
+	color: #000000;
+	
+}
+
+.product-removal {
+	
+	margin-top: 55px;
+	width:auto;
+}
+
+.product-quantity input {
+	
+	width:25%;
+	width:auto;
+	margin-top: 10px;
+}
+
+
+.panel-body {
+	
+	background: aliceblue;
+}
+	
+	
+
+	
+
+
+
+
+
+
+
+
+
+

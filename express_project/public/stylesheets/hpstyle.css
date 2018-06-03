@@ -1,0 +1,115 @@
+body {
+    font-family: 'Arimo', sans-serif;
+    background: #f4f4f4;
+}
+
+#filters {
+    height: auto;
+}
+
+#filters:hover{
+    box-shadow: 0 4px 3px rgba(0,0,0,0.05),0 8px 13px rgba(0,0,0,0.05),0 18px 23px rgba(0,0,0,0.05);
+}
+
+
+.container {
+
+}
+
+.carousel-inner img {
+    margin: auto;
+}
+
+.panel-footer {
+    color: darkblue;
+    font-size: 20px;
+}
+
+#promotion{
+    margin-left: 37px;
+    margin-top: 10px;
+}
+
+#head{
+    background-color: #001f3f;
+}
+
+.panel {
+    height: 24em;
+    position: relative;
+}
+
+.panel a:hover, a:visited, a:link, a:active{
+    text-decoration: none;
+}
+
+.panel:hover {
+    box-shadow: 0 4px 3px rgba(0,0,0,0.15),0 8px 13px rgba(0,0,0,0.15),0 18px 23px rgba(0,0,0,0.15);
+}
+
+.panel-primary {
+    border: none;
+    box-shadow: 0 4px 3px rgba(0,0,0,0.05),0 8px 13px rgba(0,0,0,0.05),0 18px 23px rgba(0,0,0,0.05);
+}
+
+.panel-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#myCarousel {
+    box-shadow: 0 4px 3px rgba(0,0,0,0.05),0 8px 13px rgba(0,0,0,0.05),0 18px 23px rgba(0,0,0,0.05);
+}
+
+
+#builderAd{
+    text-align: center;
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url("https://wallpaperstudio10.com/static/wpdb/wallpapers/3840x2160/172447.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url("https://wallpaperstudio10.com/static/wpdb/wallpapers/3840x2160/172447.jpg");
+    opacity: 0.8;
+    color: white;
+    box-shadow: 0 4px 3px rgba(0,0,0,0.05),0 8px 13px rgba(0,0,0,0.05),0 18px 23px rgba(0,0,0,0.05);
+}
+
+.carousel-inner img {
+    width: 100%;
+    transform: translateY(-21%);
+}
+
+.badgebox
+{
+    opacity: 0;
+}
+
+.button-color
+{
+    margin-bottom: 4px;
+    margin-right: 4px;
+    background-color: #3264b5 !important;
+}
+
+.badgebox + .badge
+{
+    /* Move the check mark away when unchecked */
+    text-indent: -999999px;
+    /* Makes the badge's width stay the same checked and unchecked */
+    width: 27px;
+
+}
+
+.badgebox:focus + .badge
+{
+    /* Set something to make the badge looks focused */
+    /* This really depends on the application, in my case it was: */
+    
+    /* Adding a light border */
+    box-shadow: inset 0px 0px 5px;
+    /* Taking the difference out of the padding */
+}
+
+.badgebox:checked + .badge
+{
+    /* Move the check mark back when checked */
+    text-indent: 0;
+}
